@@ -14,22 +14,22 @@ import AsyncStorage from "@react-native-community/async-storage";
 const Stack = createStackNavigator()
 
 function Route() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(null)
   const [signIn, setSignIn] = useState(null)
 
-  useEffect(() => {
-    setTimeout(() => {
-      AsyncStorage.getItem('signedIn', (err, res) => {
-        if(res) {
-          setSignIn(true)
-          setLoading(false)
-        } else {
-          setSignIn(false)
-          setLoading(false)
-        }
-      })
-    }, 3000)
-  })
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     AsyncStorage.getItem('signedIn', (err, res) => {
+  //       if(res) {
+  //         setSignIn(true)
+  //         setLoading(false)
+  //       } else {
+  //         setSignIn(false)
+  //         setLoading(false)
+  //       }
+  //     })
+  //   }, 3000)
+  // })
 
   if(loading) {
     return <Loading />
@@ -38,11 +38,8 @@ function Route() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {signIn ? (
-          <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-        ) : (
-          <Stack.Screen name="Launch" component={Launch} options={{ headerShown: false }} />
-        )}
+        <Stack.Screen name="Launch" component={Launch} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />      
       </Stack.Navigator>
     </NavigationContainer>
   )

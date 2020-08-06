@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { 
   SafeAreaView,
   View,
@@ -9,27 +9,52 @@ import {
   Image,
   Dimensions
 } from "react-native";
-
-import auth from "@react-native-firebase/auth";
+import LottieView from 'lottie-react-native';
+import FadeInView from "react-native-fade-in-view";
 
 import AsyncStorage from "@react-native-community/async-storage";
 
 const width = Dimensions.get('screen').width
 
-const Launch = (props) => {
+const Launch = ({navigation}) => {
   const [loading, setLoading] = useState(true)
   const [signedIn, setSignedIn] = useState(null)
+  const [loadingScreen, setLoadingScreen] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      AsyncStorage.getItem('signedIn', (err, res) => {
+        if(res) {
+          setLoadingScreen(false)
+          setSignedIn(true)
+        } else {
+          setLoadingScreen(false)
+          setSignedIn(false)
+        }
+      })
+    }, 3000)
+  })
 
   mulai = () => {
-    // auth().signInAnonymously()
-    // .then((res) => alert('sukses'))
-    // .catch((err) => alert(err))
-    
     AsyncStorage.setItem('signedIn', 'true')
+    setSignedIn(true)
+  }
+
+  if(loadingScreen) {
+    return (
+      <View style={styles.container}>
+        <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+        <LottieView source={require('../animations/loading.json')} style={styles.media} autoPlay={true} loop={true} />
+      </View>
+    )
+  }
+
+  if(signedIn) {
+    navigation.navigate('Home')
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <FadeInView duration={2000} style={styles.container}>
       <StatusBar backgroundColor="#dcdcdc" barStyle="dark-content" />
       <View style={styles.body}>
         <Image source={require('../Images/launch.png')} style={styles.launchImage} onLoadEnd={() => setLoading(false)} />
@@ -45,14 +70,16 @@ const Launch = (props) => {
         </TouchableOpacity>
         )}
       </View>
-    </SafeAreaView>
+    </FadeInView>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   body: {
     alignItems: 'center',
@@ -75,7 +102,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Ubuntu',
     fontSize: 15,
     margin: 10,
-    marginHorizontal: 20,
+    marginHorizontal: 30,
     textAlign: 'center'
   },
   button: {
@@ -89,6 +116,10 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     fontFamily: "Ubuntu-Medium"
+  },
+  media: {
+    width: width,
+    height: width-100
   }
 })
 
