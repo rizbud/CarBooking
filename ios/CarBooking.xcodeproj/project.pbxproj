@@ -16,6 +16,11 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* CarBookingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* CarBookingTests.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		CC17CFB33E9F489A92F16715 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D5B8E01866184ADEB8FF1EC8 /* Montserrat-SemiBold.ttf */; };
+		5C9BA08AC19D4AE4B7B3BEEF /* Montserrat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4F25FD56E3F4D049164CB45 /* Montserrat.ttf */; };
+		CE507BCF1A6C4D70B4FFF5A2 /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3186021DC8D8474F9F565C28 /* Ubuntu-Medium.ttf */; };
+		CD9922128AE34E88A2726D12 /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A97285B7E3E14CDF87BA25D7 /* Ubuntu-Regular.ttf */; };
+		1955B9BF982F48EC951C1AA2 /* Ubuntu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B20D5E0641A147DBBDB4F5D7 /* Ubuntu.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CarBooking/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		D5B8E01866184ADEB8FF1EC8 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; name = "Montserrat-SemiBold.ttf"; path = "../src/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B4F25FD56E3F4D049164CB45 /* Montserrat.ttf */ = {isa = PBXFileReference; name = "Montserrat.ttf"; path = "../src/fonts/Montserrat.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3186021DC8D8474F9F565C28 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Medium.ttf"; path = "../src/fonts/Ubuntu-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A97285B7E3E14CDF87BA25D7 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Regular.ttf"; path = "../src/fonts/Ubuntu-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B20D5E0641A147DBBDB4F5D7 /* Ubuntu.ttf */ = {isa = PBXFileReference; name = "Ubuntu.ttf"; path = "../src/fonts/Ubuntu.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +150,7 @@
 				00E356EF1AD99517003FC87E /* CarBookingTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				C4C7B7D5F5564123B1B04675 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -156,6 +167,19 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		C4C7B7D5F5564123B1B04675 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				D5B8E01866184ADEB8FF1EC8 /* Montserrat-SemiBold.ttf */,
+				B4F25FD56E3F4D049164CB45 /* Montserrat.ttf */,
+				3186021DC8D8474F9F565C28 /* Ubuntu-Medium.ttf */,
+				A97285B7E3E14CDF87BA25D7 /* Ubuntu-Regular.ttf */,
+				B20D5E0641A147DBBDB4F5D7 /* Ubuntu.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -295,6 +319,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				CC17CFB33E9F489A92F16715 /* Montserrat-SemiBold.ttf in Resources */,
+				5C9BA08AC19D4AE4B7B3BEEF /* Montserrat.ttf in Resources */,
+				CE507BCF1A6C4D70B4FFF5A2 /* Ubuntu-Medium.ttf in Resources */,
+				CD9922128AE34E88A2726D12 /* Ubuntu-Regular.ttf in Resources */,
+				1955B9BF982F48EC951C1AA2 /* Ubuntu.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
