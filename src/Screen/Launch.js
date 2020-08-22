@@ -19,25 +19,25 @@ const width = Dimensions.get('screen').width
 const Launch = ({navigation}) => {
   const [loading, setLoading] = useState(true)
   const [signedIn, setSignedIn] = useState(null)
-  const [loadingScreen, setLoadingScreen] = useState(true)
+  const [loadingScreen, setLoadingScreen] = useState(null)
 
-  useEffect(() => {
-    setTimeout(() => {
-      AsyncStorage.getItem('signedIn', (err, res) => {
-        if(res) {
-          setLoadingScreen(false)
-          setSignedIn(true)
-        } else {
-          setLoadingScreen(false)
-          setSignedIn(false)
-        }
-      })
-    }, 3000)
-  })
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     AsyncStorage.getItem('signedIn', (err, res) => {
+  //       if(res) {
+  //         setLoadingScreen(false)
+  //         setSignedIn(true)
+  //       } else {
+  //         setLoadingScreen(false)
+  //         setSignedIn(false)
+  //       }
+  //     })
+  //   }, 3000)
+  // })
 
   mulai = () => {
     AsyncStorage.setItem('signedIn', 'true')
-    setSignedIn(true)
+    navigation.navigate('Home')
   }
 
   if(loadingScreen) {
@@ -54,8 +54,8 @@ const Launch = ({navigation}) => {
   }
 
   return (
-    <FadeInView duration={2000} style={styles.container}>
-      <StatusBar backgroundColor="#dcdcdc" barStyle="dark-content" />
+    <FadeInView duration={1500} style={styles.container}>
+      <StatusBar backgroundColor="#fff" barStyle="dark-content" />
       <View style={styles.body}>
         <Image source={require('../Images/launch.png')} style={styles.launchImage} onLoadEnd={() => setLoading(false)} />
         <Text style={styles.title}>{loading ? ('') : ('CarBooking')}</Text>

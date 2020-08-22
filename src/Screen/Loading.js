@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   media: {
-    width: width,
-    height: width-100
+    width: width-200,
+    height: width-200
   }
 })
 
