@@ -57,7 +57,7 @@ const Launch = ({navigation}) => {
     <FadeInView duration={1500} style={styles.container}>
       <StatusBar backgroundColor="#fff" barStyle="dark-content" />
       <View style={styles.body}>
-        <Image source={require('../Images/launch.png')} style={styles.launchImage} onLoadEnd={() => setLoading(false)} />
+        <Image source={require('../images/launch.png')} style={styles.launchImage} onLoadEnd={() => setLoading(false)} />
         <Text style={styles.title}>{loading ? ('') : ('CarBooking')}</Text>
         <Text style={styles.caption}>{loading ? ('') : ('Mencari mobil rental kini semakin mudah dengan CarBooking.')}</Text>
         {loading ? (
