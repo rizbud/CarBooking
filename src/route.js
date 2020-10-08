@@ -5,10 +5,10 @@ import NetInfo from "@react-native-community/netinfo";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Home from './Screen/Home'
-import Launch from "./Screen/Launch";
-import Loading from "./Screen/Loading";
-import Detail from "./Screen/Detail";
+import Home from './screen/Home'
+import Launch from "./screen/Launch";
+import Loading from "./screen/Loading";
+import Detail from "./screen/Detail";
 
 import auth from "@react-native-firebase/auth";
 
