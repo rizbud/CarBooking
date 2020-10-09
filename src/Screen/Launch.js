@@ -15,25 +15,12 @@ import FadeInView from "react-native-fade-in-view";
 import AsyncStorage from "@react-native-community/async-storage";
 
 const width = Dimensions.get('screen').width
+import styles from './styles/launchStyle'
 
 const Launch = ({navigation}) => {
   const [loading, setLoading] = useState(true)
   const [signedIn, setSignedIn] = useState(null)
   const [loadingScreen, setLoadingScreen] = useState(null)
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     AsyncStorage.getItem('signedIn', (err, res) => {
-  //       if(res) {
-  //         setLoadingScreen(false)
-  //         setSignedIn(true)
-  //       } else {
-  //         setLoadingScreen(false)
-  //         setSignedIn(false)
-  //       }
-  //     })
-  //   }, 3000)
-  // })
 
   mulai = () => {
     AsyncStorage.setItem('signedIn', 'true')
@@ -73,54 +60,5 @@ const Launch = ({navigation}) => {
     </FadeInView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  body: {
-    alignItems: 'center',
-    flex: 1,
-    justifyContent: 'center'
-  },
-  launchImage: {
-    width: width,
-    height: width-150,
-    margin: 10,
-    resizeMode: 'stretch',
-    marginHorizontal: 20
-  },
-  title: {
-    fontFamily: "Ubuntu-Medium",
-    fontSize: 28,
-    margin: 5
-  },
-  caption: {
-    fontFamily: 'Ubuntu',
-    fontSize: 15,
-    margin: 10,
-    marginHorizontal: 30,
-    textAlign: 'center'
-  },
-  button: {
-    backgroundColor: "#e34534",
-    padding: 10,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-    margin: 10
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontFamily: "Ubuntu-Medium"
-  },
-  media: {
-    width: width,
-    height: width-100
-  }
-})
 
 export default Launch
